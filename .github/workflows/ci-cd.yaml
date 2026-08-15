@@ -45,3 +45,7 @@ jobs:
                 file: ./backend/Dockerfile
                 push: false
                 tags: taskhub-backend
+
+            - name: Push Image
+              if: ${{ github.event_name == 'push' }}
+              run: docker push image
